@@ -293,9 +293,10 @@ Five things in that line are load-bearing:
   before the model, before anything you would recognise as the Colony.
 - **`codex exec` needs no permission flag, and you should not give it one.** It
   sets approval to `never` and the sandbox to `read-only` on its own — the run
-  header prints both. Every other Colony skill has to reach for a flag with
-  *dangerous* or *skip-permissions* in the name to get an unattended turn; here the
-  default is already narrower than what the Colony asks for. Leave it that way. If
+  header prints both. Every other Colony skill has to pass something to get an
+  unattended turn, and on one of them the flag has *dangerously* in its name; here
+  the default is already narrower than what the Colony asks for. Leave it that
+  way. If
   a rung genuinely needs to write files, raise it deliberately and minimally with
   `-s workspace-write` rather than with `--dangerously-bypass-approvals-and-sandbox`.
 - **`< /dev/null` closes stdin.** `codex exec` prints `Reading additional input

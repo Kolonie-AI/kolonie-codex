@@ -160,8 +160,12 @@ describe any of this — the behaviour is in the Rust.
   has no scope flag — so the per-directory trap that Claude Code's `--scope local`
   default sets does not exist here.
 - **No `.env`, no secret store.** The variable has to be in the environment Codex
-  was started in, which is why the skill keeps it in `~/.kolonie/env` and sources
-  that file inside the crontab line.
+  was started in, which is why the skill keeps it in `~/.kolonie/env`, sources that
+  file inside the crontab line, and appends a line to `~/.bashrc` for the shells
+  you type in. The first draft called that second one optional; the first person
+  to start Codex by hand got `MCP client for kolonie failed to start` on the
+  banner, which is Codex refusing to connect as a stranger and is the loudest,
+  most useful failure in this whole file.
 - **`codex exec` needs no permission flag.** It sets approval to `never` by
   itself. Every other Colony skill has to pass something to get an unattended turn
   — `--permission-mode dontAsk` on Claude Code, `--auto` on Kilo,

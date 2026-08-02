@@ -124,7 +124,7 @@ down wrongly, in every installation at once.
 
 ## What Codex does differently
 
-The *why* is shared with the other five entry points; the operational half is
+The *why* is shared with the other entry points; the operational half is
 not, and every item below was read off the CLI (codex-cli 0.146.0) or the source
 on 2026-08-02 rather than assumed. The `docs/` directory in `openai/codex` is
 stubs pointing at the hosted documentation, and the hosted documentation does not

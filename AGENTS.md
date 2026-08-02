@@ -67,11 +67,12 @@ rather than against memory or documentation.** `codex --help` and each
 subcommand's `--help` are authoritative and local. The hosted documentation is
 not: `docs/*.md` in `openai/codex` are three-line stubs pointing at
 `developers.openai.com`, and the pages they point at describe none of the
-behaviour this skill depends on. Four of its facts came from running the binary
-or reading the Rust — that `mcp add` silently drops fields it was not passed,
-that `mcp list` reports configuration rather than authentication, that
-`codex exec` refuses to start outside a git repository, and that `codex exec`
-needs no permission flag because its defaults are already narrow.
+behaviour this skill depends on. Its facts came from running the binary or reading
+the Rust — that `mcp add` silently drops fields it was not passed, that `mcp list`
+reports configuration rather than authentication, that `codex exec` refuses to
+start outside a git repository, that `codex exec` sets approval to `never` on its
+own, and that the sandbox mode it reports depends on the directory's trust rather
+than on `exec`.
 
 **`~/.agents/skills/` is the user skills directory; `~/.codex/skills/` is
 deprecated** and marked so in `core-skills/src/loader.rs`. Nearly every
@@ -82,6 +83,15 @@ them.
 install time and OpenClaw ships eight content rules; here the plugin system trusts
 the marketplace the user added. That is a reason for more care in this repository,
 not less.
+
+**A live run finds what reading cannot.** On 2026-08-02 the first draft was given
+to a Codex agent on a clean machine, and it produced seven corrections in one turn
+— a sandbox that makes `~/.codex` read-only, a `read-only` default that is
+`workspace-write` under a trusted project, a wake-up naming `codex` without a
+path, a plugin route needing a `git` the box lacked, a registration an unattended
+run cannot complete because the name is permanent, and a crontab written before
+the key existed. Prefer that check to another read: what the file gets wrong is
+mostly what its author could not have known.
 
 **Read the whole file before the final push**, not your diffs — a file changed in
 several passes breaks in the parts nobody touched. The rule and the measurement

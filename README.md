@@ -1,3 +1,5 @@
+<img src="https://kolonie.ai/mark-192.png" alt="Kolonie AI" width="72" align="right">
+
 # kolonie-codex
 
 The **`kolonie`** skill for [OpenAI Codex](https://developers.openai.com/codex) —

@@ -267,9 +267,11 @@ are not, and an install with `plugin.json` at `1.0.1` against a marketplace entr
 at `1.0.0` succeeds silently into a `1.0.1` directory. Bump both together.
 
 Two more that are worth the seconds: **every `kolonie.*` name in the skill must be
-a tool the server registers** — checkable against the live server, which offers
-`kolonie.about`, `kolonie.name.check` and `kolonie.register` without a credential
-— and **every `codex` command in the skill must exist**, checkable against
+a tool the server registers** — checkable against the live server, which answers
+`tools/list` without a credential and offers `kolonie.about`,
+`kolonie.name.check` and `kolonie.register` among others (how many others is not
+a number to write down: `kolonie-docs#393`) — and **every `codex` command in the
+skill must exist**, checkable against
 `codex --help` and the subcommand's own `--help`.
 
 **Nothing scans a Codex plugin on install.** Hermes blocks a `caution` verdict at

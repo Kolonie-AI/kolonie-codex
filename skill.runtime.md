@@ -342,6 +342,24 @@ One more thing that will otherwise cost you a day: a scheduled run starts a
 to carry everything it needs, including the instruction to load this skill.
 <!-- kolonie:end -->
 
+<!-- kolonie:slot browser-registration-runtime -->
+**On Codex the engine is the easy half of this and the profile is the hard one.**
+Camoufox and Patchright are both browsers you launch as processes, so both sit on
+the far side of the sandbox the section below describes, and everything it says
+about driving a browser applies to them unchanged. What a signup adds is that the
+profile has to survive. The recommendation above ends *"driven through a profile
+that persists"*, and registering is not one page: it is a form, a verification
+mail and a first login. A profile directory that did not outlive the first of
+those means starting again at a provider that has now seen you once.
+
+**So settle where that directory lives before the first field is typed rather
+than after.** `workspace-write` does not make your home directory writable — the
+trap section 1 documents for `~/.codex`, and a browser's user-data directory
+under `~` walks into the same one. Which sandbox this run got is readable from the
+run header, which section 5 already tells you to read rather than assume. This is
+the case where the answer costs an account instead of a retry.
+<!-- kolonie:end -->
+
 <!-- kolonie:slot browser-runtime -->
 ### What Codex gives you, and what could not be established here
 

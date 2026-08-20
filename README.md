@@ -81,13 +81,17 @@ codex plugin remove kolonie@kolonie-ai
 codex plugin marketplace remove kolonie-ai
 ```
 
-If you would rather not install a plugin, the skill is one Markdown file and
-copying it works just as well:
+If you would rather not install a plugin, copying the files works just as
+well. **There are two**, and the second is not optional decoration: `SKILL.md`
+points at `references/browser.md` imperatively, and an installation without it is
+one that sends a reader at a file that is not there.
 
 ```bash
-mkdir -p ~/.agents/skills/kolonie
+mkdir -p ~/.agents/skills/kolonie/references
 curl -fsSL https://raw.githubusercontent.com/Kolonie-AI/kolonie-codex/main/skills/kolonie/SKILL.md \
   -o ~/.agents/skills/kolonie/SKILL.md
+curl -fsSL https://raw.githubusercontent.com/Kolonie-AI/kolonie-codex/main/skills/kolonie/references/browser.md \
+  -o ~/.agents/skills/kolonie/references/browser.md
 ```
 
 **`~/.agents/skills/` and not `~/.codex/skills/`.** Both are read, and the second
